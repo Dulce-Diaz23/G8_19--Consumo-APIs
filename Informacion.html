@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Descripción de Formularios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Activo</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Formularios Consumo APIs</a>
+            <ul class="dropdown-menu  ">
+              <li><a class="dropdown-item" href="Empresa.html">Formulario Empresa</a></li>
+              <li><a class="dropdown-item" href="Factura.html">Formulario Factura</a></li>
+              <li><a class="dropdown-item" href="Cliente.html">Formulario Cliente</a></li>
+              <li><a class="dropdown-item" href="Producto.html">Formulario Producto</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Home.html">Home</a>
+          </li>
+    </ul>
+</head>
+<body >
+    <div class="container ">
+        <div class="consulta mt6 ">
+            <div class="row">
+                <div class="col-6 ">
+                    <hr3 style=" font-size: 26px ;">
+                        Ventas Online --> Formularios
+                    </hr3>
+                </div>
+            </div>
+            <hr>
+            <div class="box-body">
+                <div class="table table responsive">
+                    <table class="table table-info table-striped table-bordered table-bordered border-primary">
+                        <thead class="table-primary table-bordered table-bordered border-secondary">
+                            <tr>
+                                <th>Formulario Empresa</th>
+                            </tr>
+                            <hr>
+                        </thead>
+                        <tbody id="DataClientes">
+                            <tr>
+                                <td>
+                                    <p> 
+                                        Este formulario gestiona la información relacionada con las empresas que participan en el proceso de ventas
+                                        de productos. Permite registrar, visualizar, editar y eliminar datos de la empresa. Las funciones y operaciones 
+                                        que se pueden realizar son las siguientes:
+                                        <p>1.- Agregar empresa: permite registrar una nueva empresa en el sistema proporcinando todos los atributos mencionados anteriormente.</p>
+                                        <p>2.- Visualizar informacion de la empresa: muestra una lista de las empresas registradas en el sistema.</p>
+                                        <p>3.- Editar empresa: modifica la información existente de una empresa.</p>
+                                        <p>4.- Eliminar: elimina una empresa del sistema en caso de que ya no esté disponible.</p>
+
+                                    </p>
+                                    
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="consulta mt6">
+            <div class="row">
+            </div>
+            <div class="box-body">
+                <div class="table table responsive">
+                    <table class="table table-info table-striped table-bordered table-bordered border-primary">
+                        <thead class="table-primary table-bordered table-bordered border-secondary">
+                            <tr>
+                                <th>Formulario Factura</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="DataClientes">
+                            <tr>
+                                <td>
+                                    <p> El formulario de factura tiene las siguientes funcionalidades:
+                                        <p>
+                                            1.- Generar factura: permite crear una nueva factura para una nueva venta, solicitando
+                                            número de factura, fecha de factura, código de cliente, monto de factura, sucursal y tipo moneda.
+                                        </p>
+                                        <p>
+                                            2.- Cargar facturas: muestra en una tabla la lista de facturas existentes en el sistema. proporciona
+                                            toda la información sobre la factura.
+                                        </p>
+
+                                        <p>
+                                           3- Eliminar factura:  La API procesa la solicitud y realiza la eliminación de la factura del sistema, lo que
+                                            implica eliminarla de la base de datos.
+                                        </p>
+                                        <p> 
+                                           4.- Actualizar factura: permitir la modificación de una factura existente en el sistema. Al actualizar una factura, se pueden modificar los detalles de la venta  
+                                        </p>
+                                        
+                                    </p>
+                                    
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="consulta mt6">
+            <div class="box-body">
+                <div class="table table responsive">
+                    <table class="table table-info table-striped table-bordered table-bordered border-primary">
+                        <thead class="table-primary table-bordered table-bordered border-secondary">
+                            <tr>
+                                <th>Formulario Cliente</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="DataClientes">
+                            <tr>
+                                <td>
+                                    <p>Este formulario almacena información relevante sobre los clientes, como número de cliente,
+                                        nombres, apellidos, rtn, fecha de afiliación, saldo actual y numero de teléfono. Con Este
+                                        formulario se pueden realizar las siguientes operaciones:
+                                        <p>1.- Registrar nuevos cliente: añade nuevos clientes a la base de datos.</p>
+                                        <p>2.- Actualizar información del cliente: permite modificar la información y los datos esten actualizados.</p>
+                                        <p>3.- Consultar información del cliente: la API proporciona datos del cliente almacenados en la base de datos.</p>
+                                        <p>4.- Eliminar clientes: elimina información de la base de datos.</p>
+                                    </p>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="consulta mt6">
+            <div class="box-body">
+                <div class="table table responsive">
+                    <table class="table table-info table-striped table-bordered table-bordered border-primary">
+                        <thead class="table-primary table-bordered table-bordered border-secondary">
+                            <tr>
+                                <th>Formulario Producto</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="DataClientes">
+                            <tr>
+                                <td>
+                                    <p>Este formulario gestiona la información de los productos que se ofrecen en la plataforma,
+                                        contiene campos como número de factura, id del producto, nombre, fecha de vencimiento, precio,
+                                        cantidad y comentarios que permiten registrar, actualizar, consultar y eliminar información de los
+                                        productos.
+                                        Con este formulario, se pueden realizar las siguientes operaciones relacionadas con la gestión de productos:
+                                        <p>1.- Registro de nuevos productos: permite añadir nuevos productos a la base de datos.</p>
+                                        <p>2.- Actualización de información del producto: se pueden modificar la información de los productos existentes, 
+                                            como cambiar el precio, actualizar la descripción. </p>
+                                        <p>3.- Eliminación de productos: elimina el producto de la base de datos.</p>
+                                        <p>4.- Consulta de productos: proporciona datos de los productos almacenados en la base de datos.</p>
+
+                                    </p>
+                                    
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
