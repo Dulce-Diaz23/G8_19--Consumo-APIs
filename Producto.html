@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=divice-width, initial-scale=1.0">
+    <title>Producto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" 
+    crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="JS/Producto.js"></script>
+</head>
+
+<body>
+<!--  
+ Barra de navegación para poder regresar a la pagina de inicio o redireccionarse a otras paginas del html 
+\-->  
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">G8_19 Consumo APIs</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Home.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Informacion.html">Información</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Entidades
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Empresa.html">Formulario Empresa</a></li>
+                  <li><a class="dropdown-item" href="Cliente.html">Formulario Cliente</a></li>
+                  <li><a class="dropdown-item" href="Factura.html">Formulario Factura</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!--  
+     Formato de tabla que mostrará los datos almacenados en la tabla producto
+    \-->
+    <div class="container">
+        <div class="consulta mt6">
+            <div class="row">
+                <div class="col-6">
+                    <h3>Lista de Productos</h3>
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="table table-responsive">
+                    <table class="table table-light">
+                        <thead>
+                            <tr>
+                                <th>Id Producto</th>
+                                <th>Numero Factura</th>
+                                <th>Nombre Producto</th>
+                                <th>Fecha de Vencimiento</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Comentario</th>
+                                <th>Editar</th>
+                                <th>Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="DataProductos">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--  
+        Formato de formulario en donde se ingresarán nuevos datos y actualizarán datos existentes
+        \-->
+        <div class="Formulario mt6"> 
+            <div class="row">
+                <div class="col-12" id="encabezado">
+                    <h3>Agregar Producto</h3>
+                </div>
+            </div>
+            <div class="col-12">
+                <form id="Form1" class="Producto">
+                    <label for="">Id Producto</label>
+                    <input type="text" id="IDPRODUCTO" class="form-control" placeholder="Ingrese el Id del Producto">
+                    <label for="">Numero Factura</label>
+                    <input type="text" id="NOFACTURA" class="form-control" placeholder="Ingrese el Numero de Factura">
+                    <label for="">Nombre Producto</label>
+                    <input type="text" id="NOMBREPRODUCTO" class="form-control" placeholder="Ingrese el Nombre del Producto">
+                    <label for="">Fecha de Vencimiento</label>
+                    <input type="text" id="FECHA" class="form-control" placeholder="Ingrese la Fecha de Vencimiento">
+                    <label for="">Precio</label>
+                    <input type="text" id="PRECIO" class="form-control" placeholder="Ingrese el Precio del Producto">
+                    <label for="">Cantidad</label>
+                    <input type="text" id="CANTIDAD" class="form-control" placeholder="Ingrese la Cantidad de Producto">
+                    <label for="">Comentario</label>
+                    <input type="text" id="COMENTARIO" class="form-control" placeholder="Ingrese un Comentario">
+                    <hr>
+                    <div id="btnagregarproducto">
+                        <input type="submit" value="Agregar Producto" class="btn btn-dark" id="btnagregar" onclick="AgregarProducto()">
+                    </div>
+                </form>
+            </div>
+        </div>     
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" 
+    crossorigin="anonymous"></script>
+</body>
+</html>
