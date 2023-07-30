@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/JS/Empresa.js"></script>
+
+    <ul class="nav nav-tabs ">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Activo</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Formularios Consumo APIs</a>
+            <ul class="dropdown-menu">
+              
+              <li><a class="dropdown-item" href="Factura.html">Formulario Factura</a></li>
+              <li><a class="dropdown-item" href="Producto.html">Formulario Producto</a></li>
+              <li><a class="dropdown-item" href="Cliente.html">Formulario Cliente</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Home.html">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="Informacion.html">Información</a>
+          </li>
+    </ul>
+
+</head>
+
+<body style="text-align: left; ">
+    <div class="container ">
+        <div class="consulta mt6">
+            <div class="row">
+                <div class="col-6 ">
+                    <hr3 style=" font-size: 26px;">
+                        Lista de Empresas
+                    </hr3>
+                </div>
+            </div>
+            <hr>
+            <div class="box-body">
+                <div class="table table responsive">
+                    <table class="table table table-dark  table-bordered btn-danger  border-black">
+                        <thead class="table-yellow">
+                            <tr>
+                                <th>Id Empresa</th>
+                                <th>Nombre_de Empresa</th>
+                                <th>Direccion Oficina</th>
+                                <th>Email</th>
+                                <th>Fecha de Fundacion</th>
+                                <th>Pais</th>
+                                <th>RTN</th>
+                            </tr>
+                        </thead>
+                        <tbody id="DataEmpresa">
+                            <td>
+                                <button id="btnEditar"  class="btn btn-warning " onclick="CargarEmpresa()" >Editar</button>
+                            </td>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="Formulario" class="Formulario mt6">
+            <div class="row"> 
+               <div class="col-12">
+                     <h3 style=" font-size: 26px;">
+                      Agregar Empresa
+                     </h3>
+    
+                 </div>
+    
+             </div> 
+             <div class="col-12">
+                 <form id="Miformulario" class="Empresa">
+                    <labe>ID de Empresa</labe>
+                    <input type="text" id="idEmpresa" class="form-control  "placeholder =" Ingrese la ID de la empresa"  >
+                     <labe>Nombre de Empresa</labe>
+                     <input type="text" id="nombredeempresa" class="form-control " placeholder="Ingrese el nombre de la empresa">
+                     <labe>direccion</labe>
+                     <input type="text" id="direccionoficinaprincipal" class="form-control" placeholder="Ingrese la direccion de la oficina principal">
+                     <labe> email</labe>
+                     <input type="text" id="email" class="form-control" placeholder="Ingrese correo" >
+                     <label for="">Fecha fundacion</label>
+                     <input type="date" name="Fecha" id="fecha" class="form-control" placeholder="Ingrese fecha fundacion">
+                     <label for="">Pais</label>
+                     <input type="text" name="" id="pais" class="form-control " placeholder="Ingrese pais">
+                     <label for="">RTN</label>
+                     <input type="text" id="rtn" class="form-control" placeholder="Ingrese numero RTN">
+                     <hr>
+                    
+                     <div id="btnagregarempresa">
+                          <input type="submit" value="Agregar Empresa" class="btn btn-outline-danger" id="btnagregar"
+                          onclick="AgregarEmpresa()">
+                     </div>  
+                 </form>
+             </div>
+         </div>
+    </div>
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
