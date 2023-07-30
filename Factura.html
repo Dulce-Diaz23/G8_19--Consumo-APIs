@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+    crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="Factura.js"></script>
+     
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Activo</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Formularios Consumo APIs</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="Empresa.html">Formulario Empresa</a></li>
+              <li><a class="dropdown-item" href="Cliente.html">Formulario Cliente</a></li>
+              <li><a class="dropdown-item" href="Producto.html">Formulario Producto</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Home.html">Home</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="Informacion.html">Información</a>
+          </li>
+    </ul>
+
+</head>
+
+<body>
+    <div class="container"> 
+        <div class="consulta mt6">
+            <div class="row">
+                <div class="col-6">
+                    <h3> 
+                        Lista de Facturas 
+                    </h3>
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="table table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Numero Factura</th>
+                                <th>Fecha Factura</th>
+                                <th>Codigo Cliente</th>
+                                <th>Nombre Cliente</th>
+                                <th>Monto Factura</th>
+                                <th>Sucursal</th>
+                                <th>Moneda Factura</th>
+                            </tr>
+                        </thead>
+                        <tbody id="DataFacturas">
+                            <td>
+                                <button id="btneditar" class="btn btn-primary" onclick="CargarFactura()">Editar</button>
+                            </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="Formulario" class="Formulario mt6">
+        <div class="row">
+            <div class="col-12">
+                <h3>
+                    Agregar Factura
+                </h3>
+            </div>
+        </div>
+        <div class="col-12">
+            <form id="Miformulario" class="Factura">
+                <label for="">numero factura</label>
+                <input type="text" id="numerofactura" class="form-control" placeholder="Ingrese el numero de factura">
+                <label for="">fecha factura</label>
+                <input type="date" id="fechafactura" class="form-control" placeholder="Ingrese fecha">
+                <label for="">codigo cliente</label>
+                <input type="text" id="codigocliente" class="form-control" placeholder="Ingrese codigo">
+                <label for="">nombre cliente</label>
+                <input type="text" id="nombrecliente" class="form-control" placeholder="Ingrese nombre">
+                <label for="">monto factura</label>
+                <input type="text" id="montofactura" class="form-control" placeholder="Ingrese monto">
+                <label for="">sucursal</label>
+                <input type="text" id="sucursal" class="form-control" placeholder="Ingrese sucursal">
+                <label for="">moneda factura</label>
+                <input type="text" id="monedafactura" class="form-control" placeholder="Ingrese moneda">
+                <hr>
+                <div id="btnagregarfactura">
+                    <input type="button" value="Agregar Factura" class="btn btn-success" id="btnagregar"
+                    onclick="AgregarFactura()">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+     crossorigin="anonymous"></script>
+
+</body>
+</html>
