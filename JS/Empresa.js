@@ -6,10 +6,10 @@ var UrlApiEliminar = 'http://localhost:5008/empresa/eliminar/:id_empresa';
 
 
 $(document).ready(function(){
-    CargarEmpresa();
+    CargarEmpresas();
 });
 
-function CargarEmpresa (){
+function CargarEmpresas (){
     $.ajax({
         url: UrlApiGetAll,
         type:'GET',
