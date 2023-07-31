@@ -42,8 +42,8 @@ function CargarEmpresas (){
 
 function AgregarEmpresa(){
     var datosempresa={
-        id_empresa :$('#idempresa').val(),
-        nombre_de_empresa : $('#nombredeempresa').val(),
+        id_empresa :$('#idEmpresa').val(),
+        nombre_de_empresa : $('#nombredeEmpresa').val(),
         direccion_oficina_principal :$('#direccionoficinaprincipal').val(),
         email : $('#email').val(),
         fecha_fundacion : $('#fecha').val(),
@@ -96,7 +96,7 @@ function CargarEmpresa(p_id_empresa){
 
     };
 
-    const inputElement0 = document.getElementById('idempresa');
+    const inputElement0 = document.getElementById('idEmpresa');
     inputElement0.readOnly = true;
     const inputElement = document.getElementById('fecha');
     inputElement.type = 'text';
@@ -112,8 +112,8 @@ function CargarEmpresa(p_id_empresa){
         success : function(response){
             var MiItems = response; 
             for(i=0; i < MiItems.length; i++){
-                $('#idempresa').val (MiItems[i].id_empresa );
-                $('#nombredeempresa').val (MiItems[i].nombre_de_empresa);
+                $('#idEmpresa').val (MiItems[i].id_empresa );
+                $('#nombredeEmpresa').val (MiItems[i].nombre_de_empresa);
                 $('#direccionoficinaprincipal').val (MiItems[i].direccion_oficina_principal);
                 $('#email').val (MiItems[i].email);
                 $('#fecha').val (MiItems[i].fecha_fundacion);
@@ -132,11 +132,11 @@ function CargarEmpresa(p_id_empresa){
 //////////////////////////////////////////////////////////////////////
 function ActualizarEmpresa(p_id_empresa) {
     
-    var idEmpresa = $('#idempresa').val();
-    var nombredeEmpresa = $('#nombredeempresa').val();
-    var direccion_oficina_principal = $('#direccionoficinaprincipal').val();
+    var idEmpresa = $('#idEmpresa').val();
+    var nombredeEmpresa = $('#nombredeEmpresa').val();
+    var direccionoficinaprincipal = $('#direccionoficinaprincipal').val();
     var email = $('#email').val();
-    var fecha_fundacion = $('#fecha').val();
+    var fecha = $('#fecha').val();
     var pais = $('#pais').val();
     var rtn = $('#rtn').val();
 
@@ -145,9 +145,9 @@ function ActualizarEmpresa(p_id_empresa) {
     var datosEmpresa = {
         id_empresa: idEmpresa,
         nombre_de_empresa: nombredeEmpresa,
-        direccionoficinaprincipal: direccion_oficina_principal,
+        direccion_oficina_principal: direccionoficinaprincipal,
         email:email ,
-        fechafundacion:  fecha_fundacion ,
+        fecha_fundacion:  fecha ,
         pais: pais,
         rtn:rtn
 
@@ -190,11 +190,11 @@ function EliminarEmpresa(p_id_empresa) {
             contentType: 'application/json',
             success: function (response) {
                 // Actualiza la lista de empresa después de eliminar
-                CargarEmpresa();
+                CargarEmpresas();
             },
             error: function (xhr, textStatus, error) {
                 // Maneja errores en caso de que ocurra algún problema al eliminar el empresa
-                console.error("Error al eliminar al eliminar empresa: " + error);
+                console.error("Error  eliminar al eliminar empresa: " + error);
             }
         });
     }
