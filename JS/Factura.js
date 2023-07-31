@@ -1,7 +1,7 @@
 var UrlApiGetAll ='http://localhost:5008/factura/getall'
 var UrlApiGetOne ='http://localhost:5008/factura/getone/:numero_factura'
 var UrlApiInsert ='http://localhost:5008/factura/insertar/:numero_factura'
-var UrlApiUpdate ='http://localhost:5008/factura/actualizar/:numero_factura'
+var UrlApiActualizar ='http://localhost:5008/factura/actualizar/:numero_factura'
 var UrlApiDelete ='http://localhost:5008/factura/eliminar/:numero_factura'
 
 
@@ -28,9 +28,9 @@ function CargarFacturas(){
                  '<td>'+ MiItems[i].sucursal +'</td>'+
                  '<td>'+ MiItems[i].moneda_factura +'</td>'+
                  '<td> '+
-                 '<button id="btneditar" class="btn btn-primary" onclick="CargarFactura('+ MiItems[i].numero_factura +')">Editar</button>'
+                 '<button id="btneditar" class="btn btn-primary" onclick="CargarFactura('+ MiItems[i].numero_factura +')">Editar</button>'+
                  '</td>'+
-                 '</td>'+
+                 '<td> '+
                  '<button class="btn btn-danger" onclick="EliminarFactura(' + MiItems[i].numero_factura + ')" >Eliminar</button>' +
                  '</td>'+
                  '</tr>';
@@ -69,37 +69,59 @@ function AgregarFactura(){
      })
 }
 
-function CargarFactura(numero_factura){
-     var datosfactura = {
-          numero_factura : numero_factura
-     }
+function personalizar(){
+     const fechaInput = document.getElementById('fechafactura');
+     
+             // Obtiene el valor del campo (fecha completa en formato ISO 8601)
+             const fechaCompleta = fechaInput.value;
+     
+             // Crea un objeto Date a partir de la fecha completa
+             const fechaObjeto = new Date(fechaCompleta);
+     
+             // Obtiene la fecha en formato deseado (YYYY-MM-DD)
+             const fechaFormateada = fechaObjeto.toISOString().split('T')[0];
+     
+             // Actualiza el valor del campo con la fecha formateada
+             fechaInput.value = fechaFormateada;
+ }
 
+function CargarFactura(p_numero_factura){
+     var datosfactura = {
+          numero_factura :p_numero_factura,
+     };
+     
+     const inputElement0 = document.getElementById('numerofactura');
+     inputElement0.readOnly = true;
+     const inputElement = document.getElementById('fechafactura');
+     inputElement.type = 'text';
+     
      var datosfacturajson = JSON.stringify(datosfactura);
 
-     alert(datosfacturajson);
+     //alert(datosfacturajson);
 
      $.ajax({
           url : UrlApiGetOne,
           type: 'POST',
           data: datosfacturajson,
           datatype: 'JSON',
-          contentType: 'application/json',
+          contentType: 'application/JSON',
           success : function(reponse){
                var MiItems = reponse;
                for(i=0; i < MiItems.length; i++){
                     $('#numerofactura').val(MiItems[i].numero_factura);
                     $('#fechafactura').val(MiItems[i].fecha_factura);
-                    $('#codigocliente').val(MiItems[i].codigo_cliente_);
+                    personalizar();
+                    $('#codigocliente').val(MiItems[i].codigo_cliente);
                     $('#nombrecliente').val(MiItems[i].nombre_cliente);
                     $('#montofactura').val(MiItems[i].monto_factura);
                     $('#sucursal').val(MiItems[i].sucursal);
                     $('#monedafactura').val(MiItems[i].moneda_factura);
                     var btnactualizar='<input type="button"  class="btn btn-primary" ' +
                     'id="btnagregar" onclick="ActualizarFactura('+ MiItems[i].numero_factura +')" value="Agregar Factura">';
-                    $('btnagregarfactura.').html(btnactualizar)
+                    $('btnagregarfactura.').html(btnactualizar);
                }
           }
-     })
+     });
 }
 
 function ActualizarFactura(numero_factura){
@@ -110,24 +132,22 @@ function ActualizarFactura(numero_factura){
     var nombrecliente = $('#nombrecliente').val();
     var montofactura = $('#montofactura').val();
     var sucursal = $('#sucursal').val();
-    var monedafactura = $('#telefono').val();
-
-
-    var datosFactura = {
-        numero_factura: numerofactura,
-        fecha_factura: fechafactura,
-        codigo_cliente: codigocliente,
-        nombre_cliente: nombrecliente ,
-        monto_facturan:  montofactura ,
+    var monedafactura= $('#monedafactura').val();
+    
+    var datosfactura = {
+        numero_factura:numerofactura,
+        fecha_factura:fechafactura,
+        codigo_cliente:codigocliente,
+        nombre_cliente:nombrecliente ,
+        monto_factura:montofactura ,
         sucursal:sucursal,
         moneda_factura:monedafactura
-
-    };
-
+     }; 
+    
     $.ajax({
-        url: UrlApiUpdate, 
+        url: UrlApiActualizar, 
         type: 'PUT',
-        data: JSON.stringify(datosFactura),
+        data: JSON.stringify(datosfactura),
         contentType: 'application/json',
         success: function(response) { 
               alert('Factura actualizada correctamente');
