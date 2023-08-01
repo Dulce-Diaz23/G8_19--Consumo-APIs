@@ -62,7 +62,7 @@ function AgregarCliente(){
         datatype : 'JSON',
         contentType: 'application/json',
         success: function(response){
-            alert('Cliente Ingresado de Forma Correcta');
+            
             $('#Miformulario').submit();
         },
         error : function(textError, errorThrow){
@@ -70,6 +70,8 @@ function AgregarCliente(){
 
         }
     });
+
+    alert('Cliente Ingresado de Forma Correcta');   
 
 }
 
@@ -161,7 +163,7 @@ function ActualizarCliente(p_numero_cliente) {
         contentType: 'application/json',
         success: function(response) {
             // Maneja la respuesta del servidor
-            alert('Cliente actualizado correctamente');
+           
             $('#Miformulario').submit();
            
         },
@@ -170,6 +172,7 @@ function ActualizarCliente(p_numero_cliente) {
             alert('Error al actualizar el cliente: ' + error);
         }
     });
+    alert('Cliente actualizado correctamente');
 }
 
 
@@ -197,6 +200,7 @@ function EliminarCliente(p_numero_cliente) {
                 console.error("Error al eliminar el cliente: " + error);
             }
         });
+        alert('Cliente eliminado correctamente');
     }
 }
 
